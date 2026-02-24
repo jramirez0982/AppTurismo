@@ -34,7 +34,7 @@ export function Hero() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-blue rounded-full transition-colors"
+              className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text rounded-full transition-colors"
             >
               Explorar Destinos
             </motion.button>
