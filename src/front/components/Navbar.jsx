@@ -2,12 +2,32 @@ import { Link } from "react-router-dom";
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { link } from "motion/react-client";
 
 export const Navbar = () => {
 
-	 const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = ['Inicio', 'Experiencias', 'Galería', 'Contacto'];
+  const menuItems = [
+    {
+      link: "/inicio",
+      name: "Inicio",
+    },
+
+    {
+      link: "/experiencias",
+      name: "Experiencias",
+    },
+    {
+      link: "/contacto",
+      name: "Contacto"
+    },
+    {
+      link: "/galeria",
+      name: "Galería"
+    }
+
+  ];
 
   return (
     <motion.nav
@@ -29,12 +49,13 @@ export const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {menuItems.map((item) => (
+                console.log(item),
                 <a
                   key={item}
                   href="#"
                   className="text-white hover:text-yellow-400 transition-colors px-3 py-2"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>
@@ -77,7 +98,7 @@ export const Navbar = () => {
                 href="#"
                 className="text-white hover:text-yellow-400 block px-3 py-2 transition-colors"
               >
-                {item}
+                {item.name}
               </a>
             ))}
             <button className="w-full mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-black rounded-full transition-colors">
@@ -89,5 +110,5 @@ export const Navbar = () => {
     </motion.nav>
   );
 
-	
+
 };

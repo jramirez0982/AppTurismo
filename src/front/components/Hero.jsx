@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-//import { ImageWithFallback } from './figma/ImageWithFallback.tsx';
 import { ChevronDown } from 'lucide-react';
 
 export function Hero() {
@@ -27,7 +26,7 @@ export function Hero() {
           <h1 className="text-6xl md:text-7xl text-white mb-6 font-semibold">
             Descubre la Magia de <span className="text-yellow-400">Nuestro Municipio</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto font-semi-bold">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto font-semibold">
             Vive una experiencia única donde se encuentran la naturaleza, la cultura y el mejor café del mundo
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
