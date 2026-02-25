@@ -24,24 +24,24 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-7xl text-white mb-6">
+          <h1 className="text-6xl md:text-7xl text-white mb-6 font-semibold">
             Descubre la Magia de <span className="text-yellow-400">Nuestro Municipio</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto font-semi-bold">
             Vive una experiencia única donde se encuentran la naturaleza, la cultura y el mejor café del mundo
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text rounded-full transition-colors"
+              className="font-bold px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-black rounded-full transition-colors"
             >
               Explorar Destinos
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border-2 border-white rounded-full backdrop-blur-sm transition-colors"
+              className="font-bold px-8 py-4 bg-white/10 hover:bg-white/20 text-black border-2 border-white rounded-full backdrop-blur-sm transition-colors"
             >
               Planifica tu Viaje
             </motion.button>

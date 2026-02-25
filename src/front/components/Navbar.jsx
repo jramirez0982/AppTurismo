@@ -20,7 +20,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl text-white">
+            <h1 className="text-3xl text-white font-bold">
               Turismo <span className="text-yellow-400">Apía</span>
             </h1>
           </div>

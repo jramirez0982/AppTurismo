@@ -34,15 +34,15 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="display-4">Hello Rigo!!</h1>
-			<p className="lead">
-				<img src={rigoImageUrl} className="img-fluid rounded-circle mb-3" alt="Rigo Baby" />
+			<h1 className="text-4xl font-bold">Hello Rigo!!</h1>
+			<p className="text-lg">
+				<img src={rigoImageUrl} className="w-32 h-32 rounded-full mb-3 mx-auto block" alt="Rigo Baby" />
 			</p>
-			<div className="alert alert-info">
+			<div className="bg-blue-100 text-blue-800 p-3 rounded mx-auto max-w-md">
 				{store.message ? (
 					<span>{store.message}</span>
 				) : (
-					<span className="text-danger">
+					<span className="text-red-500">
 						Loading message from the backend (make sure your python 🐍 backend is running)...
 					</span>
 				)}
