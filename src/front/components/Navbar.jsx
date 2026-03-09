@@ -41,7 +41,7 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-3xl text-white font-bold">
-              Turismo <span className="text-yellow-400">Apía</span>
+              App<span className="text-yellow-400">Turismo</span>
             </h1>
           </div>
 
