@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import { TourismCard } from "../components/TourismCard.jsx";
 
 export const Home = () => {
 
@@ -34,19 +35,21 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1 className="text-4xl font-bold">Hello Rigo!!</h1>
-			<p className="text-lg">
-				<img src={rigoImageUrl} className="w-32 h-32 rounded-full mb-3 mx-auto block" alt="Rigo Baby" />
-			</p>
-			<div className="bg-blue-100 text-blue-800 p-3 rounded mx-auto max-w-md">
-				{store.message ? (
-					<span>{store.message}</span>
-				) : (
-					<span className="text-red-500">
-						Loading message from the backend (make sure your python 🐍 backend is running)...
-					</span>
-				)}
-			</div>
+			<section className="py-20 px-4 bg-white">
+				<div className="max-w-7xl mx-auto">
+					<div className="text-center mb-16">
+						<h2 className="text-4xl md:text-5xl mb-4">Tres Mundos por Descubrir</h2>
+						<p className="text-xl text-gray-600 max-w-2xl mx-auto">
+							Nuestro municipio te ofrece una experiencia completa que combina naturaleza, cultura y tradición cafetera
+						</p>
+					</div>
+
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						<TourismCard />
+
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }; 
