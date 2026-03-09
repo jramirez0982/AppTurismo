@@ -33,6 +33,35 @@ export const Home = () => {
 		loadMessage()
 	}, [])
 
+	const planesTurismo = [
+		{
+			titulo: "Avistamiento de Aves",
+			Descripcion: "Sumergete en la varidad de nuestro ecosistema y disfruta de las mas bellas aves de la region",
+			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"	
+		},
+
+		{
+			titulo: "Parapentismo",
+			Descripcion: "Vuela sobre los paisajes mas hermosos de la region y disfruta de una experiencia unica",
+			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+		},
+
+		{
+			titulo: "Caminatas Ecológicas",
+			Descripcion: "Explora los senderos naturales de nuestro municipio y descubre la flora y fauna local en su hábitat natural",
+			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+		},
+
+		{
+			titulo: "Ruta del café",
+			Descripcion: "Descubre el proceso del café desde la siembra hasta la taza, visitando fincas cafeteras y aprendiendo sobre la cultura cafetera local",
+			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+		}
+
+	]
+
+
+
 	return (
 		<div className="text-center mt-5">
 			<section className="py-20 px-4 bg-white">
@@ -44,8 +73,16 @@ export const Home = () => {
 						</p>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						<TourismCard />
+					<div className="flex flex-wrap justify-center gap-8">
+
+						{planesTurismo.map((plan, index) => (
+							<TourismCard
+								key={index}
+								titulo={plan.titulo}
+								descripcion={plan.Descripcion}
+								imagen={plan.imagen}
+							/>
+						))}
 
 					</div>
 				</div>
