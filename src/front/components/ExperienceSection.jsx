@@ -64,10 +64,10 @@ export function ExperienceSection() {
               className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mb-6">
-                <exp.icon className="w-8 h-8 text-yellow-400" />
+                <exp.icon className="w-16 h-16 text-white bg-yellow-400 rounded-full" />
               </div>
-              <h3 className="text-xl mb-3">{exp.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{exp.description}</p>
+              <h3 className="text-xl text-left mb-3">{exp.title}</h3>
+              <p className="text-gray-600 text-left leading-relaxed">{exp.description}</p>
             </motion.div>
           ))}
         </div>
