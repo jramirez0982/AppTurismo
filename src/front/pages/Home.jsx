@@ -1,7 +1,11 @@
 import React, { useEffect } from "react"
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import { Leaf, Users, Coffee, Mountain, Camera, Heart } from 'lucide-react';
 import { TourismCard } from "../components/TourismCard.jsx";
+import { ExperienceSection } from "../components/ExperienceSection.jsx";
+
+
 
 export const Home = () => {
 
@@ -37,13 +41,13 @@ export const Home = () => {
 		{
 			titulo: "Avistamiento de Aves",
 			Descripcion: "Sumergete en la varidad de nuestro ecosistema y disfruta de las mas bellas aves de la region",
-			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"	
+			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
 		},
 
 		{
 			titulo: "Parapentismo",
 			Descripcion: "Vuela sobre los paisajes mas hermosos de la region y disfruta de una experiencia unica",
-			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+			imagen: "https://images.unsplash.com/photo-1635991062422-b3e2f8c36dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDb2xvbWJpYSUyMGNvZmZlZSUyMHBsYW50YXRpb24lMjBsYW5kc2NhcGV8ZW58MXx8fHwxNzcwODYxMzc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
 		},
 
 		{
@@ -61,7 +65,7 @@ export const Home = () => {
 	]
 
 
-
+	
 	return (
 		<div className="text-center mt-5">
 			<section className="py-20 px-4 bg-white">
@@ -73,7 +77,7 @@ export const Home = () => {
 						</p>
 					</div>
 
-					<div className="flex flex-wrap justify-center gap-8">
+					<div className="flex flex-wrap justify-center gap-12">
 
 						{planesTurismo.map((plan, index) => (
 							<TourismCard
@@ -86,7 +90,12 @@ export const Home = () => {
 
 					</div>
 				</div>
+			
+				<ExperienceSection />
 			</section>
+			
+			 
+			
 		</div>
 	);
 }; 
