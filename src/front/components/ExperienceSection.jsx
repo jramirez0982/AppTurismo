@@ -38,7 +38,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section className="flex flex-wrap justify-center gap-12  bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,13 +46,13 @@ export function ExperienceSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl mb-4">Experiencias Inolvidables</h2>
+          <h2 className="text-4xl md:text-5xl mb-4 mt-20">Experiencias Inolvidables</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Cada momento en nuestro municipio es una oportunidad para crear recuerdos duraderos
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-8 md:px-16 lg:px-19">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
