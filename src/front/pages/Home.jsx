@@ -4,6 +4,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Leaf, Users, Coffee, Mountain, Camera, Heart } from 'lucide-react';
 import { TourismCard } from "../components/TourismCard.jsx";
 import { ExperienceSection } from "../components/ExperienceSection.jsx";
+import { GallerySection } from "../components/GallerySection.jsx";
 
 
 
@@ -92,6 +93,8 @@ export const Home = () => {
 				</div>
 			
 				<ExperienceSection />
+				<GallerySection />
+				
 			</section>
 			
 			 
