@@ -11,7 +11,7 @@ export const Layout = () => {
             <Navbar />
             <Hero />
                 <Outlet />
-            <Footer />
+            
         </ScrollToTop>
     )
 }

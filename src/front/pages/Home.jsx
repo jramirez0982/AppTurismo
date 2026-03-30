@@ -5,6 +5,8 @@ import { Leaf, Users, Coffee, Mountain, Camera, Heart } from 'lucide-react';
 import { TourismCard } from "../components/TourismCard.jsx";
 import { ExperienceSection } from "../components/ExperienceSection.jsx";
 import { GallerySection } from "../components/GallerySection.jsx";
+import { CTASection } from "../components/CTASection.jsx";
+import { Footer } from "../components/Footer.jsx";
 
 
 
@@ -69,7 +71,7 @@ export const Home = () => {
 	
 	return (
 		<div className="text-center mt-5">
-			<section className="py-20 px-4 bg-white">
+			<section className="bg-white">
 				<div className="max-w-7xl mx-auto">
 					<div className="text-center mb-16">
 						<h2 className="text-4xl md:text-5xl mb-4">Tres Mundos por Descubrir</h2>
@@ -94,6 +96,8 @@ export const Home = () => {
 			
 				<ExperienceSection />
 				<GallerySection />
+				<CTASection />
+				<Footer />
 				
 			</section>
 			
