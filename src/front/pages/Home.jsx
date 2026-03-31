@@ -7,6 +7,7 @@ import { ExperienceSection } from "../components/ExperienceSection.jsx";
 import { GallerySection } from "../components/GallerySection.jsx";
 import { CTASection } from "../components/CTASection.jsx";
 import { Footer } from "../components/Footer.jsx";
+import { Hero } from "../components/Hero.jsx";
 import { Link } from "react-router-dom";
 
 
@@ -71,7 +72,9 @@ export const Home = () => {
 
 	
 	return (
+		
 		<div className="text-center mt-5">
+			<Hero />
 			<section className="bg-white">
 				<div className="max-w-7xl mx-auto">
 					<div className="text-center mb-16">
