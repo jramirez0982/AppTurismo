@@ -67,15 +67,8 @@ export const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white rounded-full transition-colors flex items-center gap-2"
             >
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white rounded-full transition-colors flex items-center gap-2"
-              >
-
-                Iniciar Sesión
-              </motion.button>
+              Iniciar Sesión
+            </motion.button>
           </Link>
           <div className="hidden md:block">
             <motion.button
