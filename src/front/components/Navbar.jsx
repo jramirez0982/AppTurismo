@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { link } from "motion/react-client";
+import { HashLink } from "react-router-hash-link";
 
 
 export const Navbar = () => {
@@ -11,20 +12,20 @@ export const Navbar = () => {
 
   const menuItems = [
     {
-      link: "/inicio",
+      link: "#inicio",
       name: "Inicio",
     },
 
     {
-      link: "/experiencias",
+      link: "#experiencias",
       name: "Experiencias",
     },
     {
-      link: "/contacto",
+      link: "#contacto",
       name: "Contacto"
     },
     {
-      link: "/galeria",
+      link: "#galeria",
       name: "Galería"
     }
 
@@ -51,13 +52,14 @@ export const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               {menuItems.map((item) => (
                 console.log(item),
-                <a
+                <div
                   key={item}
-                  href="#"
+                  href={item.link}
                   className="text-white hover:text-yellow-400 transition-colors px-3 py-2"
                 >
-                  {item.name}
-                </a>
+                  <HashLink smooth className="nav-link" to={item.link}>{item.name}</HashLink>
+                  
+                </div>
               ))}
             </div>
           </div>

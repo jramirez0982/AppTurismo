@@ -73,7 +73,7 @@ export const Home = () => {
 	
 	return (
 		
-		<div className="text-center mt-5">
+		<div id="inicio" className="text-center mt-5">
 			<Hero />
 			<section className="bg-white">
 				<div className="max-w-7xl mx-auto">
