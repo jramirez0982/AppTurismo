@@ -7,6 +7,7 @@ import { ExperienceSection } from "../components/ExperienceSection.jsx";
 import { GallerySection } from "../components/GallerySection.jsx";
 import { CTASection } from "../components/CTASection.jsx";
 import { Footer } from "../components/Footer.jsx";
+import { Link } from "react-router-dom";
 
 
 
