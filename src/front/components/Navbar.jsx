@@ -12,20 +12,20 @@ export const Navbar = () => {
 
   const menuItems = [
     {
-      link: "#inicio",
+      link: "/#inicio",
       name: "Inicio",
     },
 
     {
-      link: "#experiencias",
+      link: "/#experiencias",
       name: "Experiencias",
     },
     {
-      link: "#contacto",
+      link: "/#contacto",
       name: "Contacto"
     },
     {
-      link: "#galeria",
+      link: "/#galeria",
       name: "Galería"
     }
 
@@ -104,13 +104,15 @@ export const Navbar = () => {
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {menuItems.map((item) => (
-              <a
+              <div
                 key={item}
                 href="#"
+                
                 className="text-white hover:text-yellow-400 block px-3 py-2 transition-colors"
               >
-                {item.name}
-              </a>
+                <HashLink smooth className="nav-link" to={item.link}>{item.name}</HashLink>
+                
+              </div>
             ))}
             <button className="w-full mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-black rounded-full transition-colors">
               Reservar

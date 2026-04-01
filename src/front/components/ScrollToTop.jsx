@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 // Investigate more about this React behavior :D 
 
 const ScrollToTop = ({ location, children }) => {
+    
     const prevLocation = useRef(location);
 
     useEffect(() => {

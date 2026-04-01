@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { User, Lock, Mail, Phone, MapPin, Eye, EyeOff, LogIn, UserPlus, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Navbar } from "../components/Navbar.jsx";
+
 
 export function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -38,6 +40,7 @@ export function Login() {
 
   return (
     <div className="min-h-screen w-full relative flex items-center justify-center py-32 px-4">
+      
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

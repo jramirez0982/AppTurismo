@@ -9,6 +9,7 @@ import { CTASection } from "../components/CTASection.jsx";
 import { Footer } from "../components/Footer.jsx";
 import { Hero } from "../components/Hero.jsx";
 import { Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar.jsx";
 
 
 
@@ -74,6 +75,7 @@ export const Home = () => {
 	return (
 		
 		<div id="inicio" className="text-center mt-5">
+			
 			<Hero />
 			<section className="bg-white">
 				<div className="max-w-7xl mx-auto">
