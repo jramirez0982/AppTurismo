@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 export function CTASection() {
   return (
-    <section className="relative py-32 px-4 overflow-hidden">
+    <section id="contacto" className="relative py-32 px-4 overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-yellow-500" />
       <div className="absolute inset-0 opacity-10">

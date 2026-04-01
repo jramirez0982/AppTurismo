@@ -27,8 +27,8 @@ const galleryImages = [
 
 export function GallerySection() {
   return (
-    <section className="py-20 px-4 bg-black text-white">
-      <div id="galeria" className="max-w-7xl mx-auto">
+    <section id="galeria" className="py-20 px-4 bg-black text-white">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
