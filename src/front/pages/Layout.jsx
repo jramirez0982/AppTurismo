@@ -9,7 +9,7 @@ export const Layout = () => {
     const location = useLocation()
     return (
         <ScrollToTop location={location}>
-            <Navbar />
+                <Navbar />
             
                 <Outlet />
             

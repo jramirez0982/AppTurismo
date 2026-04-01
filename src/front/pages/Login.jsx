@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { User, Lock, Mail, Phone, MapPin, Eye, EyeOff, LogIn, UserPlus, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navbar } from "../components/Navbar.jsx";
+import { Footer } from '../components/Footer.jsx';
 
 
 export function Login() {
@@ -39,6 +40,7 @@ export function Login() {
   };
 
   return (
+    <div>
     <div className="min-h-screen w-full relative flex items-center justify-center py-32 px-4">
       
       {/* Background Image */}
@@ -394,8 +396,11 @@ export function Login() {
           }}
           className="absolute -bottom-20 -right-20 w-60 h-60 bg-yellow-500/20 rounded-full blur-3xl"
         />
+          
       </motion.div>
     
+    </div>
+    <Footer />
     </div>
     
   );
