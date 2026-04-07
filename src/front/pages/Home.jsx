@@ -80,7 +80,7 @@ export const Home = () => {
 			<section className="bg-white">
 				<div className="max-w-7xl mx-auto">
 					<div className="text-center mb-16">
-						<h2 className="text-4xl md:text-5xl mb-4">Tres Mundos por Descubrir</h2>
+						<h2 className="text-4xl md:text-5xl mb-4 py-8">Tres Mundos por Descubrir</h2>
 						<p className="text-xl text-gray-600 max-w-2xl mx-auto">
 							Nuestro municipio te ofrece una experiencia completa que combina naturaleza, cultura y tradición cafetera
 						</p>
