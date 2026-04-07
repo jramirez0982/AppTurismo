@@ -10,6 +10,7 @@ import { Footer } from "../components/Footer.jsx";
 import { Hero } from "../components/Hero.jsx";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar.jsx";
+import { ContactForm } from '../components/ContactForm.jsx';
 
 
 

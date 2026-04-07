@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bird, Coffee, Music, Bike, Wind, Mountain, Landmark, ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Bird, Coffee, Music, Bike, Wind, Mountain, Landmark, ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ContactForm } from '../components/ContactForm.jsx';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -117,7 +119,7 @@ function PrevArrow({ onClick }) {
   );
 }
 
-function DestinoCard({ destino, index }) {
+function DestinoCard({ destino, index, onOpenModal }) {
   const Icon = destino.icon;
   
   return (
@@ -166,6 +168,7 @@ function DestinoCard({ destino, index }) {
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
+          onClick={() => onOpenModal(destino)}
           className="w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl border-none outline-none"
         >
           Más Información
@@ -176,6 +179,21 @@ function DestinoCard({ destino, index }) {
 }
 
 export function DestinosPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedDestino, setSelectedDestino] = useState(null);
+
+  const handleOpenModal = (destino) => {
+    setSelectedDestino(destino);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedDestino(null);
+    document.body.style.overflow = 'unset';
+  };
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -192,6 +210,73 @@ export function DestinosPage() {
 
   return (
     <div className="min-h-screen w-full bg-white">
+      {/* Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl"
+          >
+            {/* Close Button */}
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+            >
+              <X className="w-6 h-6 text-gray-900" />
+            </button>
+
+            {/* Modal Content */}
+            {selectedDestino && (
+              <div>
+                {/* Header Image */}
+                <div className="relative h-64 md:h-80">
+                  <img
+                    src={selectedDestino.image}
+                    alt={selectedDestino.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h2 className="text-3xl md:text-4xl text-white mb-2">{selectedDestino.title}</h2>
+                    <div className="flex items-center gap-4 text-white/90">
+                      <span className="flex items-center gap-2">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {selectedDestino.duration}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        {selectedDestino.difficulty}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Modal Body */}
+                <div className="p-8">
+                  <div className="mb-8">
+                    <h3 className="text-2xl text-gray-900 mb-4">Sobre esta experiencia</h3>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      {selectedDestino.description}
+                    </p>
+                  </div>
+
+                  <div className="border-t border-gray-200 pt-8 font-bold">
+                    <h3 className="text-2xl text-gray-900 mb-6">Solicita más información</h3>
+                    <ContactForm />
+                  </div>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0">
@@ -281,7 +366,7 @@ export function DestinosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {destinos.map((destino, index) => (
-              <DestinoCard key={destino.id} destino={destino} index={index} />
+              <DestinoCard key={destino.id} destino={destino} index={index} onOpenModal={handleOpenModal} />
             ))}
           </div>
         </div>
@@ -322,6 +407,26 @@ export function DestinosPage() {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="py-20 px-4 bg-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl text-gray-900 mb-6">
+              Contáctanos
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Llena el formulario para obtener más información sobre nuestros destinos
+            </p>
+            <ContactForm />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
@@ -343,3 +448,7 @@ export function DestinosPage() {
     </div>
   );
 }
+
+
+
+
