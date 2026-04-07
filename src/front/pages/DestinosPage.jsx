@@ -166,7 +166,7 @@ function DestinoCard({ destino, index }) {
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+          className="w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl border-none outline-none"
         >
           Más Información
         </motion.button>
